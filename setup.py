@@ -1,3 +1,29 @@
-from setuptools import setup, find_packages
+import setuptools
 
-setup(name="MLOPS_Data_Science_Project", version="0.1.0", packages=find_packages("src"), package_dir={'': 'src'}, install_requires=[])
+with open("README.md", "r" , encoding="utf-8") as f:
+    long_description = f.read()
+
+__version__="0.0.0"
+
+REPO_NAME = "MLOPS_Data_Science_Project"
+AUTHOR_USER_NAME = "Kapeilaash"
+SRC_REPO="MLOPS_Data_Science_Project"
+AUTHOR_EMAIL = "koneswarankapeilaash@gmail.com"
+
+
+setuptools.setup(
+    name=SRC_REPO,
+    version=__version__,
+    author=AUTHOR_USER_NAME,
+    author_email=AUTHOR_EMAIL,
+    description="A small python package for MLOPS Data Science Project",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
+    project_urls={
+        "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
+    },
+
+    package_dir={"": "src"},
+    packages=setuptools.find_packages(where="src")
+)
